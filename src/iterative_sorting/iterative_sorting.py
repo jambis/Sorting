@@ -26,7 +26,6 @@ def bubble_sort( arr ):
         swapped = False
         
         for i in range(len(arr)-1):
-            print(arr)
             if arr[i] > arr[i+1]:
                 temp = arr[i] 
                 arr[i] = arr[i+1]
