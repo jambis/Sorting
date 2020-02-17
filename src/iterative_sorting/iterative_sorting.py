@@ -38,7 +38,7 @@ def bubble_sort( arr ):
 def count_sort( arr, maximum=-1 ):
     if len(arr) == 0:
         return arr
-        
+
     max_range = range(max(arr) + 1)
     number_occurrences = {}
     running_sum = {}
@@ -65,5 +65,18 @@ def count_sort( arr, maximum=-1 ):
     print(result_arr)
     return result_arr
 
+#Lecture implement insertion_sort
+def insertion_sort(arr):
+    for i in range(1,len(arr)):
+        temp = arr[i]
 
-count_sort([2,4,9,6,-9,0])
+        j = i
+        while j > 0 and temp < arr[j-1]:
+            arr[j] = arr[j-1]
+            j -= 1
+        
+        arr[j] = temp
+
+    return arr
+
+
