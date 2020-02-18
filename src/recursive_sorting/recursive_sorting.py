@@ -40,24 +40,15 @@ def merge_sort(arr):
     # TO-DO
     # While your data set contains more than one item, split it in half
     # Once you have gotten down to a single element, you have also *sorted* that element
-    if len(arr) in [0, 1]:
-        return arr
-
-    elif len(arr) == 2:
-        half = len(arr)//2
-        arrA = arr[:half]
-        arrB = arr[half:]
-
-        return merge(arrA, arrB)
-
-    else:
+    if len(arr) > 1:
         half = len(arr)//2
         arrA = arr[:half]
         arrB = arr[half:]
 
         return merge(merge_sort(arrA), merge_sort(arrB))
+    else:
+        return arr
 
-    return arr
 
 # STRETCH: implement an in-place merge sort algorithm
 
