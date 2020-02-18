@@ -1,12 +1,12 @@
-# TO-DO: Complete the selection_sort() function below 
-def selection_sort( arr ):
+# TO-DO: Complete the selection_sort() function below
+def selection_sort(arr):
     # loop through n-1 elements
     for i in range(0, len(arr) - 1):
         cur_index = i
         smallest_index = cur_index
         # TO-DO: find next smallest element
-        # (hint, can do in 3 loc) 
-        for j in range  (cur_index, len(arr)):
+        # (hint, can do in 3 loc)
+        for j in range(cur_index, len(arr)):
             if arr[j] < arr[smallest_index]:
                 smallest_index = j
 
@@ -19,23 +19,25 @@ def selection_sort( arr ):
 
 
 # TO-DO:  implement the Bubble Sort function below
-def bubble_sort( arr ):
+def bubble_sort(arr):
     swapped = True
 
     while swapped:
         swapped = False
-        
+
         for i in range(len(arr)-1):
             if arr[i] > arr[i+1]:
-                temp = arr[i] 
+                temp = arr[i]
                 arr[i] = arr[i+1]
                 arr[i+1] = temp
                 swapped = True
-  
+
     return arr
 
 # STRETCH: implement the Count Sort function below
-def count_sort( arr, maximum=-1 ):
+
+
+def count_sort(arr, maximum=-1):
     if len(arr) == 0:
         return arr
 
@@ -45,16 +47,21 @@ def count_sort( arr, maximum=-1 ):
     count = 0
     result_arr = [None] * len(arr)
 
+    # Create keys for all numbers from 0 to max number in the array
+    # and initiate at 0
     for num in max_range:
         number_occurrences[f"{num}"] = 0
 
+    # Return message if there's a negative number in the array
+    # Add +1 to the number of occurrences for that key
     for num in arr:
         if num < 0:
             return "Error, negative numbers not allowed in Count Sort"
 
         number_occurrences[f"{num}"] += 1
 
-    for num in max_range: 
+    # Create running_sum by adding number of occurrences
+    for num in max_range:
         count += number_occurrences[f"{num}"]
         running_sum[f"{num}"] = count
 
@@ -65,18 +72,18 @@ def count_sort( arr, maximum=-1 ):
     print(result_arr)
     return result_arr
 
-#Lecture implement insertion_sort
+# Lecture implement insertion_sort
+
+
 def insertion_sort(arr):
-    for i in range(1,len(arr)):
+    for i in range(1, len(arr)):
         temp = arr[i]
 
         j = i
         while j > 0 and temp < arr[j-1]:
             arr[j] = arr[j-1]
             j -= 1
-        
+
         arr[j] = temp
 
     return arr
-
-

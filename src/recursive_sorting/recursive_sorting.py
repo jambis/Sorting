@@ -1,3 +1,19 @@
+import random
+
+# Quick sort
+
+
+def quick_sort(arr):
+    if arr:
+        pivot = random.choice(arr)
+        low = [n for n in arr if n < pivot]
+        middle = [n for n in arr if n == pivot]
+        high = [n for n in arr if n > pivot]
+        return [*quick_sort(low), *middle, *quick_sort(high)]
+    else:
+        return []
+
+
 # TO-DO: complete the helper function below to merge 2 sorted arrays
 def merge(arrA, arrB):
     elements = len(arrA) + len(arrB)
